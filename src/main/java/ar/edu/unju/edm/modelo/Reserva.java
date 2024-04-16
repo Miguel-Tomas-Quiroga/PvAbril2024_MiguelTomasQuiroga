@@ -22,6 +22,8 @@ public class Reserva {
 	@ManyToOne(fetch = FetchType.LAZY)
 	public CanchaDeFutbol canchaDeFutbol;
 
+	private String horario;
+
 	private boolean estado = true;
 
 	public boolean isEstado() {
@@ -32,9 +34,10 @@ public class Reserva {
 		this.estado = estado;
 	}
 
-	public Reserva(Usuario usuario, CanchaDeFutbol canchaDeFutbol) {
+	public Reserva(Usuario usuario, CanchaDeFutbol canchaDeFutbol, String horario) {
 		this.usuario = usuario;
 		this.canchaDeFutbol = canchaDeFutbol;
+		this.horario = horario;
 	}
 	public Reserva() {
 
@@ -47,7 +50,6 @@ public class Reserva {
 		this.usuario = usuario;
 	}
 
-	/*
 	public String getHorario() {
 		return this.horario;
 	}
@@ -55,7 +57,7 @@ public class Reserva {
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-	*/
+
 	public void setId(Long id) {
 		this.id = id;
 	}
